@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
 ]

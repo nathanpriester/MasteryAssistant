@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:3:5-49
 		INJECTED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/And
 		INJECTED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:5:5-29:19
+ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:5:5-33:19
 MERGED from [com.android.support:design:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/AndroidManifest.xml:25:5-20
@@ -25,6 +25,8 @@ MERGED from [com.android.support:support-fragment:24.2.1] /Users/nathan/AndroidS
 MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
 	android:label
 		ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:8:9-41
 	android:supportsRtl
@@ -73,6 +75,13 @@ activity#com.example.tommy.masteryassistant.Settings
 ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:26:9-55
 	android:name
 		ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:26:19-43
+meta-data#com.google.android.gms.version
+ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:28:9-30:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:30:13-66
+	android:name
+		ADDED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml:29:13-58
 uses-sdk
 INJECTED from /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/AndroidManifest.xml:20:5-43
@@ -86,6 +95,9 @@ MERGED from [com.android.support:appcompat-v7:24.2.1] /Users/nathan/AndroidStudi
 MERGED from [com.android.support:support-vector-drawable:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v4:24.2.1] /Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
