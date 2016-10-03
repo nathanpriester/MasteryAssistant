@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mastery Assistant</string>
+    <string name="Create_Skill">Create Skills</string>
+    <string name="Skill_Hub">Skill Hub</string>
+    <string name="Milestones">Milestones</string>
+    <string name="View_Skill">View Skills</string>
+    <string name="Progress">Progress</string>
+    <string name="Settings">Settings</string>
+</resources>

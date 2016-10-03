@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.tommy.masteryassistant.MainActivity"
+    android:background="@android:color/holo_blue_bright">
+
+    <TextView
+        android:text="Quote of the Day !"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:id="@+id/quoteView"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold|italic"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
+
+    <Button
+        android:text="@string/Create_Skill"
+        android:id="@+id/button_createskill"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:drawableTop="@android:drawable/ic_input_add"
+        android:layout_above="@+id/button_skillhub"
+        android:layout_toLeftOf="@+id/button_viewskills"
+        android:layout_toStartOf="@+id/button_viewskills"
+        android:onClick="onButton_Create_Skills" />
+
+    <Button
+        android:text="@string/Skill_Hub"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:id="@+id/button_skillhub"
+        android:layout_above="@+id/button_milestones"
+        android:layout_alignLeft="@+id/button_createskill"
+        android:layout_alignStart="@+id/button_createskill"
+        android:drawableTop="?android:attr/actionModeCopyDrawable"
+        android:onClick="onButton_Skill_Hub" />
+
+    <Button
+        android:text="@string/Milestones"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/button_milestones"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/button_skillhub"
+        android:layout_alignStart="@+id/button_skillhub"
+        android:drawableTop="@android:drawable/btn_star_big_on"
+        android:onClick="onButton_Milestones" />
+
+    <Button
+        android:text="@string/View_Skill"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:id="@+id/button_viewskills"
+        android:textAlignment="center"
+        android:layout_above="@+id/button_progress"
+        android:layout_alignRight="@+id/quoteView"
+        android:layout_alignEnd="@+id/quoteView"
+        android:drawableTop="@android:drawable/ic_dialog_dialer"
+        android:onClick="onButton_View_Skills" />
+
+    <Button
+        android:text="@string/Progress"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:id="@+id/button_progress"
+        android:layout_above="@+id/button_milestones"
+        android:layout_alignLeft="@+id/button_viewskills"
+        android:layout_alignStart="@+id/button_viewskills"
+        android:drawableTop="@android:drawable/checkbox_on_background"
+        android:onClick="onButton_Progress" />
+
+    <Button
+        android:text="@string/Settings"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:id="@+id/button_settings"
+        android:drawableTop="@android:drawable/ic_menu_preferences"
+        android:onClick="onButton_Settings"
+        android:layout_below="@+id/button_progress"
+        android:layout_toRightOf="@+id/button_milestones"
+        android:layout_toEndOf="@+id/button_milestones" />
+
+    <TextView
+        android:text="Quantified, Inc."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/team_name"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold"
+        android:textSize="14sp" />
+
+</RelativeLayout>
