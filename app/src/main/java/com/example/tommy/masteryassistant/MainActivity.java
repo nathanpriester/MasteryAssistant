@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
+/* testing github from nathans laptop with this comment */
 public class MainActivity extends AppCompatActivity {
 
     @Override
