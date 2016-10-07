@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Tommy on 9/27/2016.
- * comment added by nathan
+ * comment added by nathan asdfasdf
  */
 
 public class Create_Skills extends Activity {
