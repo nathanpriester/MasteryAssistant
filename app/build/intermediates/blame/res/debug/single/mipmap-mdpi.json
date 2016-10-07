@@ -1,10 +1,14 @@
 [
     {
-        "merged": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
-        "source": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Nathan\\AndroidStudioProjects\\MasteryAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Nathan\\AndroidStudioProjects\\MasteryAssistant\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/Users/nathan/AndroidStudioProjects/MasteryAssistant/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\nathan\\AndroidStudioProjects\\MasteryAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\nathan\\AndroidStudioProjects\\MasteryAssistant\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\nathan\\AndroidStudioProjects\\MasteryAssistant\\C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\nathan\\AndroidStudioProjects\\MasteryAssistant\\C:\\Users\\Tommy\\AndroidStudioProjects\\MasteryAssistant\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]
