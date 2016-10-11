@@ -1,31 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:background="@color/colorPrimary"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:text="Skill Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/skill_name_title"
+            android:layout_weight="1"
+            android:textColor="@android:color/background_light"
+            android:textAllCaps="true"
+            android:textSize="18dp"
+            android:textAlignment="inherit"
+            android:textIsSelectable="true"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/text_input"
-        android:background="@android:drawable/alert_light_frame"
-        android:hint="Enter Skills"
-        android:textStyle="normal|italic"
-        android:textColor="?android:attr/textColorPrimaryDisableOnly" />
+        android:id="@+id/skillName"
+        android:paddingLeft="16dp"
+        android:hint="Enter Skill Name"
+        android:gravity="bottom|center_vertical" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:background="@color/colorPrimary"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:text="Documented Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/documented_hours"
+            android:layout_weight="1"
+            android:textColor="@android:color/background_light"
+            android:textAllCaps="true"
+            android:textSize="18dp"
+            android:textAlignment="inherit"
+            android:textIsSelectable="true"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/documentedHours"
+        android:hint="Enter Documented Hours"
+        android:textColorLink="@color/common_google_signin_btn_text_dark_default"
+        android:paddingLeft="16dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:background="@color/colorPrimary"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:text="Weekly Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekly_goal_hours"
+            android:layout_weight="1"
+            android:textColor="@android:color/background_light"
+            android:textAllCaps="true"
+            android:textSize="18dp"
+            android:textAlignment="inherit"
+            android:textIsSelectable="true"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/weeklyGoal"
+        android:hint="Enter Weekly Goal Hours"
+        android:paddingLeft="16dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:backgroundTint="?android:attr/textColorSecondary"
+        android:background="@color/colorPrimary"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:text="Mastery Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Mastery_level_select"
+            android:layout_weight="1"
+            android:textColor="@android:color/background_light"
+            android:textAllCaps="true"
+            android:textSize="18dp"
+            android:textAlignment="inherit"
+            android:textIsSelectable="true"
+            android:paddingLeft="16dp"
+            android:layout_gravity="center_vertical" />
+
+    </LinearLayout>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        ></Spinner>
 
     <Button
-        android:text="Save Skill"
-        android:id="@+id/button_save"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_width="300dp"
-        android:gravity="center_vertical"
-        android:layout_gravity="center" />
-
-    <ListView
+        android:text="Save"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/sample_list" />
+        android:layout_height="wrap_content"
+        android:id="@+id/saveButton"
+        android:onClick="saveButtonClicked(View)" />
+
+    <Button
+        android:text="Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deleteButton"
+        android:onClick="deleteButtonClicked(View)" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView" />
+
 </LinearLayout>
