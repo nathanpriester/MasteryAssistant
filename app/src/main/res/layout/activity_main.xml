@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.tommy.masteryassistant.MainActivity"
-    android:background="@android:color/holo_blue_bright">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:text="Quote of the Day !"
@@ -21,11 +21,101 @@
         android:textSize="24sp"
         android:textStyle="normal|bold|italic"
         android:textAllCaps="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:background="@android:color/holo_orange_dark"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/holo_blue_dark"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:gravity="center"/>
+
+
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageView
+            android:src="@drawable/quote7"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView7"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:clickable="false" />
+
+        <ImageView
+            android:src="@drawable/quote1"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"/>
+
+        <ImageView
+            android:src="@drawable/quote2"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView2"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:cropToPadding="false"
+            android:paddingBottom="16dp" />
+
+        <ImageView
+        android:src="@drawable/quote3"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:id="@+id/imageView3"
+        android:scaleType="centerCrop"
+        android:layout_width="300dp"
+            android:paddingTop="52dp" />
+
+        <ImageView
+            android:src="@drawable/quote4"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView4"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:paddingBottom="72dp" />
+
+        <ImageView
+            android:src="@drawable/quote5"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView5"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp" />
+
+        <ImageView
+            android:src="@drawable/quote6"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView6"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:paddingTop="72dp" />
+
+
+    </ViewFlipper>
+
 
     <Button
         android:text="@string/Create_Skill"
@@ -36,18 +126,9 @@
         android:layout_above="@+id/button_skillhub"
         android:layout_toLeftOf="@+id/button_viewskills"
         android:layout_toStartOf="@+id/button_viewskills"
-        android:onClick="onButton_Create_Skills" />
-
-    <Button
-        android:text="@string/Skill_Hub"
-        android:layout_width="150dp"
-        android:layout_height="90dp"
-        android:id="@+id/button_skillhub"
-        android:layout_above="@+id/button_milestones"
-        android:layout_alignLeft="@+id/button_createskill"
-        android:layout_alignStart="@+id/button_createskill"
-        android:drawableTop="?android:attr/actionModeCopyDrawable"
-        android:onClick="onButton_Skill_Hub" />
+        android:onClick="onButton_Create_Skills"
+        android:textColor="@android:color/background_light"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse" />
 
     <Button
         android:text="@string/Milestones"
@@ -59,7 +140,9 @@
         android:layout_alignLeft="@+id/button_skillhub"
         android:layout_alignStart="@+id/button_skillhub"
         android:drawableTop="@android:drawable/btn_star_big_on"
-        android:onClick="onButton_Milestones" />
+        android:onClick="onButton_Milestones"
+        android:textColor="@android:color/background_light"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse" />
 
     <Button
         android:text="@string/View_Skill"
@@ -71,7 +154,9 @@
         android:layout_alignRight="@+id/quoteView"
         android:layout_alignEnd="@+id/quoteView"
         android:drawableTop="@android:drawable/ic_dialog_dialer"
-        android:onClick="onButton_View_Skills" />
+        android:onClick="onButton_View_Skills"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:text="@string/Progress"
@@ -82,7 +167,9 @@
         android:layout_alignLeft="@+id/button_viewskills"
         android:layout_alignStart="@+id/button_viewskills"
         android:drawableTop="@android:drawable/checkbox_on_background"
-        android:onClick="onButton_Progress" />
+        android:onClick="onButton_Progress"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:text="@string/Settings"
@@ -93,7 +180,9 @@
         android:onClick="onButton_Settings"
         android:layout_below="@+id/button_progress"
         android:layout_toRightOf="@+id/button_milestones"
-        android:layout_toEndOf="@+id/button_milestones" />
+        android:layout_toEndOf="@+id/button_milestones"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:textColor="@android:color/background_light" />
 
     <TextView
         android:text="Quantified, Inc."
@@ -103,6 +192,25 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textStyle="normal|bold"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:text="@string/Skill_Hub"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:id="@+id/button_skillhub"
+        android:drawableTop="?android:attr/actionModeCopyDrawable"
+        android:onClick="onButton_Skill_Hub"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/button_viewskills"
+        android:layout_toLeftOf="@+id/button_progress"
+        android:layout_toStartOf="@+id/button_progress"
+        android:elevation="0dp"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false" />
+
 
 </RelativeLayout>

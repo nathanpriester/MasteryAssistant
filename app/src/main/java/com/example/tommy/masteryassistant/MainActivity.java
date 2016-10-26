@@ -1,15 +1,25 @@
 package com.example.tommy.masteryassistant;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.widget.ViewFlipper;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
+
+import java.io.File;
 
 /* testing github from nathans laptop with this comment */
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    private ViewFlipper flip;
+    private float initialX;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +38,87 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build(); //PUT BACK
+
+        //IMAGE SWITHER CODE
+        flip = (ViewFlipper) findViewById(R.id.viewFlipper1);
+
+        // Setting IN and OUT animation for view flipper
+        flip.setInAnimation(this, R.anim.right_enter);
+        flip.setOutAnimation(this, R.anim.left_out);
+
+
+    }
+
+    //SHARE BUTTON STUFF
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_share, menu);
+        MenuItem shareItem = menu.findItem(R.id.action_share);
+
+        ShareActionProvider mShare = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, "Achieve Your Mastery Goals with Mastery Assistant!");
+
+        mShare.setShareIntent(shareIntent);
+
+        return true;
+
+    }
+/*
+    // Determines if Action bar item was selected. If true then do corresponding action.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        //handle presses on the action bar items
+        switch (item.getItemId()) {
+
+            case R.id.activity_share:
+                startActivity(new Intent(this, Share.class));
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+*/
+    // Implementing touch event for view flipper
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+
+                // Getting intitial by event action down
+                initialX = event.getX();
+                break;
+
+            case MotionEvent.ACTION_UP:
+
+                // On action up the flipper will start and showing next item
+                float finalX = event.getX();
+                if (initialX > finalX) {
+
+                    // Show items are 4
+                    if (flip.getDisplayedChild() == 6)
+                        break;
+
+                    // Flip show next will show next item
+                    flip.setInAnimation(this, R.anim.right_enter);
+                    flip.setOutAnimation(this, R.anim.left_out);
+                    flip.showNext();
+                } else {
+
+                    // If flip has no items more then it will display previous item
+                    if (flip.getDisplayedChild() == 0)
+                        break;
+                    flip.setInAnimation(this, R.anim.right_out);
+                    flip.setOutAnimation(this, R.anim.left_enter);
+                    flip.showPrevious();
+                }
+                break;
+        }
+        return false;
     }
 
     //Functional Button

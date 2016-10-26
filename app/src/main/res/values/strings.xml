@@ -6,4 +6,11 @@
     <string name="View_Skill">View Skills</string>
     <string name="Progress">Progress</string>
     <string name="Settings">Settings</string>
+    <string name="action_share">Share Via</string>
+    <string-array name="Mastery_Levels">
+        <item>Novice - 100 Hours</item>
+        <item>Advanced - 1000 Hours</item>
+        <item>Expert - 5000 Hours</item>
+        <item>Mastery - 10000 Hours</item>
+    </string-array>
 </resources>

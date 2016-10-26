@@ -1,5 +1,7 @@
 package com.example.tommy.masteryassistant;
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by Nathan on 10/10/2016.
  */
@@ -23,6 +25,8 @@ public class Skill {
         this._timeCompleted = _timeCompleted;
         this._desiredMasteryLevel = _desiredMasteryLevel;
         this._weeklyGoal = _weeklyGoal;
+        this._weeklyGoalProgress = 0;
+         this._weeklyGoalStarted = 2;
     }
 
     public void set_name(String _name) {

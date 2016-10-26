@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Skill Hub"
-        android:ems="10"
-        android:id="@+id/editText5"
-        android:layout_weight="1" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="102dp"
+            android:text="00 : 00 : 00"
+            android:id="@+id/tv_time"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="70dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:text="Skill Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/background_light"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:paddingTop="16dp"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_start"
+            android:backgroundTint="?android:attr/textColorTertiary"
+            android:layout_weight="1"
+            android:text="start"
+            android:textColor="@android:color/background_light" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:id="@+id/btn_stop"
+            android:layout_width="190dp"
+            android:backgroundTint="?android:attr/textColorTertiary"
+            android:textColor="@android:color/background_light"
+            android:layout_gravity="top|bottom"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="8">
+
+    </LinearLayout>
+
 </LinearLayout>
