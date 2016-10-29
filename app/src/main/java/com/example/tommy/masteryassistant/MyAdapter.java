@@ -33,8 +33,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // Provide a suitable constructor (depends on the kind of dataset)
     public MyAdapter(ArrayList<Skill> skills) {
         this.skills = skills;
-        String example = this.skills.get(2).get_name();
-
     }
 
     // Create new views (invoked by the layout manager)
