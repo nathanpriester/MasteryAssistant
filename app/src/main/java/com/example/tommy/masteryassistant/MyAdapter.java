@@ -13,20 +13,24 @@ import java.util.ArrayList;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     ArrayList<Skill> skills = new ArrayList<Skill>();
-    /*ArrayList<String> skills = new ArrayList<String>();
-    ArrayList<String> hours = new ArrayList<String>();*/
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
         // each data item is just a string in this case
         public TextView skillName;
         public TextView skillHours;
         public ViewHolder(View v) {
             super(v);
+            itemView.setOnClickListener(this);
             skillName = (TextView) v.findViewById(R.id.name_of_skill);
             skillHours = (TextView)v.findViewById(R.id.no_of_hours);
+        }
+
+        public void onClick(View w){
+            Preferences.setCurrentSkill(context, skillName.getText().toString());
         }
     }
 
@@ -56,7 +60,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         Skill currentSkill = skills.get(position);
         holder.skillName.setText(currentSkill.get_name());
         holder.skillHours.setText(Integer.toString(currentSkill.get_timeCompleted()) + " Hours");
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)

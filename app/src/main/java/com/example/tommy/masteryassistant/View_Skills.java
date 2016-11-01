@@ -1,6 +1,8 @@
 package com.example.tommy.masteryassistant;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -21,6 +23,9 @@ public class View_Skills extends Activity {
     ArrayList<Skill> skills_array = new ArrayList<Skill>();
     ArrayList<String> skills = new ArrayList<String>();
     ArrayList<String> hours = new ArrayList<String>();
+    Context mContext;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,6 @@ public class View_Skills extends Activity {
 
         cursor.moveToFirst();
         do {
-
             String skillName = cursor.getString(0);
             int hours_as_int = cursor.getInt(1);
             int desiredMastery = cursor.getInt(2);
@@ -51,15 +55,15 @@ public class View_Skills extends Activity {
             Skill skill_in_db = new Skill(skillName,hours_as_int,desiredMastery,weeklyGoal);
             skills_array.add(skill_in_db);
             Skill skilli = skills_array.get(0);
-            String Example = skilli.get_name();
-            /*String hours_as_String;
-            hours_as_String = Integer.toString(hours_as_int);
-            hours_as_String += " Hours";
-            hours.add(hours_as_String);*/
         }while (cursor.moveToNext());
         dbHandler.close();
 
         mAdapter = new MyAdapter(skills_array);
         mRecyclerView.setAdapter(mAdapter);
+
+        SharedPreferences preferences = getSharedPreferences("PREFERENCES", 0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("current_skill", "guitar");
+        editor.commit();
     }
 }
