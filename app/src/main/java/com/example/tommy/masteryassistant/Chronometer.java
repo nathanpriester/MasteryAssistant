@@ -31,7 +31,7 @@ public class Chronometer implements Runnable {
 
     @Override
     public void run() {
-
+        int count = 1;
         while(mIsRunning){
 
             long since = System.currentTimeMillis() - mStartTime;
@@ -39,16 +39,23 @@ public class Chronometer implements Runnable {
             int seconds = (int) ((since / 1000) % 60);
             int minutes = (int) ((since / MILIS_TO_MINUTES) % 60);
             int hours = (int) ((since / MILIS_TO_HOURS) % 24);
+            if(count == 50){
+                //insert sql query to update time for skill
+                //use preferences class
+                
+                count = 1;
+            }
 
             ((Skill_Hub)mContext).updateTimerText(String.format(
                     "%02d : %02d : %02d", hours, minutes, seconds));
 
             //Sleep the thread for a short amount, to prevent high CPU usage!
             try {
-                Thread.sleep(15);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            count++;
         }
     }
 }

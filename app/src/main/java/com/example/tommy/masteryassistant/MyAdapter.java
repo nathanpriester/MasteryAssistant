@@ -1,5 +1,6 @@
 package com.example.tommy.masteryassistant;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     ArrayList<Skill> skills = new ArrayList<Skill>();
-
+    public Context context;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -22,9 +23,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // each data item is just a string in this case
         public TextView skillName;
         public TextView skillHours;
-        public ViewHolder(View v) {
+        public Context context;
+        public ViewHolder(View v, Context context) {
             super(v);
             itemView.setOnClickListener(this);
+            this.context = context;
             skillName = (TextView) v.findViewById(R.id.name_of_skill);
             skillHours = (TextView)v.findViewById(R.id.no_of_hours);
         }
@@ -35,8 +38,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<Skill> skills) {
+    public MyAdapter(ArrayList<Skill> skills, Context newContext) {
         this.skills = skills;
+        this.context = newContext;
     }
 
     // Create new views (invoked by the layout manager)
@@ -48,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 .inflate(R.layout.card_view_layout, parent, false);
         // set the view's size, margins, paddings and layout parameters
 
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, context);
         return vh;
     }
 

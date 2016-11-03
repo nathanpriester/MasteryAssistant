@@ -73,17 +73,6 @@
         android:layout_height="match_parent"
         android:layout_weight="8">
 
-        <TextView
-            android:text="Skill Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/testing_preferences"
-            android:textColor="@android:color/background_light"
-            android:textAlignment="center"
-            android:textSize="18dp"
-            android:paddingTop="16dp"
-            android:textAllCaps="false" />
-
     </LinearLayout>
 
 </LinearLayout>

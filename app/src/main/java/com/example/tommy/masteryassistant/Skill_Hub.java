@@ -20,7 +20,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
  */
 
 public class Skill_Hub extends Activity {
-    private TextView mTvTime, prefs_testing;
+    private TextView mTvTime, SkillName;
     private Button mBtnStart;
     private Button mBtnLap;
     private Button mBtnStop;
@@ -41,14 +41,13 @@ public class Skill_Hub extends Activity {
         mContext = this;
 
         mTvTime = (TextView) findViewById(R.id.tv_time);
-        prefs_testing = (TextView) findViewById(R.id.testing_preferences);
+        SkillName = (TextView) findViewById(R.id.textView2);
         mBtnStart = (Button) findViewById(R.id.btn_start);
         //mBtnLap = (Button) findViewById(R.id.btn_lap);
         mBtnStop = (Button) findViewById(R.id.btn_stop);
 
-        SharedPreferences preferences = getSharedPreferences("PREFERENCES", 0);
-        String currentSkill = preferences.getString("current_skill", "No current skill set");
-        prefs_testing.setText(currentSkill);
+        String currentSkill = Preferences.getCurrentSkill(mContext);
+        SkillName.setText(currentSkill);
 
         mBtnStart.setOnClickListener(new View.OnClickListener() {
             @Override

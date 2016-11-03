@@ -58,7 +58,7 @@ public class View_Skills extends Activity {
         }while (cursor.moveToNext());
         dbHandler.close();
 
-        mAdapter = new MyAdapter(skills_array);
+        mAdapter = new MyAdapter(skills_array,this);
         mRecyclerView.setAdapter(mAdapter);
 
         SharedPreferences preferences = getSharedPreferences("PREFERENCES", 0);

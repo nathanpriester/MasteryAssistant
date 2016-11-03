@@ -60,7 +60,13 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(TABLE_SKILLS, null, values);
         db.close();
     }
-
+/*
+    public void updateSkillTime(String skillName, int timeAdded){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE " + TABLE_SKILLS + "SET " + COLUMN_TIMECOMPLETED + "=\"" + timeAdded, City='Hamburg'
+                WHERE CustomerName='Alfreds Futterkiste';");
+    }
+*/
     public Cursor getInformation(SQLiteDatabase db){
         String[] projection = {COLUMN_NAME, COLUMN_TIMECOMPLETED, COLUMN_DESIREDMASTERYLEVEL,
                             COLUMN_WEEKLYGOAL, COLUMN_WEEKLYGOALPROGRESS, COLUMN_WEEKLYGOALSTARTED};
@@ -71,8 +77,6 @@ public class DBHandler extends SQLiteOpenHelper {
     public void deleteSkill(String skillName){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_SKILLS + " WHERE " + COLUMN_NAME + "=\"" + skillName + "\";");
-        //db.execSQL("DELETE * FROM " + TABLE_SKILLS);
-        //db.execSQL("DELETE FROM " + TABLE_SKILLS + " WHERE " + COLUMN_NAME + "=\"" + skillName + "\";");
     }
 
     public String databaseToString(){
