@@ -63,7 +63,7 @@ public class DBHandler extends SQLiteOpenHelper {
 /*
     public void updateSkillTime(String skillName, int timeAdded){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE " + TABLE_SKILLS + "SET " + COLUMN_TIMECOMPLETED + "=\"" + timeAdded, City='Hamburg'
+        db.execSQL("UPDATE " + TABLE_SKILLS + " SET " + COLUMN_TIMECOMPLETED + "=\" " + timeAdded, City='Hamburg'
                 WHERE CustomerName='Alfreds Futterkiste';");
     }
 */
