@@ -12,6 +12,15 @@
     tools:context="com.example.tommy.masteryassistant.MainActivity"
     android:background="@color/colorPrimary">
 
+
+
+    <LinearLayout android:id="@+id/LinearLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/icon">
+    </LinearLayout>
+
     <TextView
         android:text="Quote of the Day !"
         android:layout_width="300dp"

@@ -2,14 +2,84 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
 
-    <EditText
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Milestones"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_weight="1" />
+        android:elevation="4dp">
+
+        <TextView
+            android:text="MILESTONES"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Milestones_Page_Title"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/m_Progressbar_action"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <TextView
+            android:text="0 Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hours_actionbar"
+            android:padding="16dp"
+            android:textAlignment="viewStart"
+            android:gravity="left"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="0 Minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/minutes_actionbar"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="0 Seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seconds_actionbar"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/my_recycler_view2" />
 </LinearLayout>

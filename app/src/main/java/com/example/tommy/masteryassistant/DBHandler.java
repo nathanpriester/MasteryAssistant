@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.ContentValues;
 
 /**
- * Created by Nathan on 10/10/2016.
+ * updated 11/10/16
  */
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -60,13 +60,32 @@ public class DBHandler extends SQLiteOpenHelper {
         db.insert(TABLE_SKILLS, null, values);
         db.close();
     }
-/*
-    public void updateSkillTime(String skillName, int timeAdded){
-        SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("UPDATE " + TABLE_SKILLS + " SET " + COLUMN_TIMECOMPLETED + "=\" " + timeAdded, City='Hamburg'
-                WHERE CustomerName='Alfreds Futterkiste';");
+
+    public int getSkillTime(String skillName){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = getInformation(db);
+        if (c.moveToFirst()){
+            do{
+                if(c.getString(0).equals(skillName)) break;
+            }while(c.moveToNext());
+        }
+        int time = c.getInt(1);
+        db.close();
+        c.close();
+        return time;
     }
-*/
+
+    public void getSkillMasteryLevel(String skillName) {
+        SQLiteDatabase db = getWritableDatabase();
+
+    }
+
+    public void addSkillTime(String skillName, int timeAdded){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE skills SET timeCompleted = timeCompleted + " + timeAdded + " WHERE name = '" + skillName + "'");
+        db.close();
+    }
+
     public Cursor getInformation(SQLiteDatabase db){
         String[] projection = {COLUMN_NAME, COLUMN_TIMECOMPLETED, COLUMN_DESIREDMASTERYLEVEL,
                             COLUMN_WEEKLYGOAL, COLUMN_WEEKLYGOALPROGRESS, COLUMN_WEEKLYGOALSTARTED};

@@ -4,15 +4,38 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+
+
+    //timer
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <TextView
+            android:text="Skill Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Skill_name_hub"
+            android:textColor="@android:color/background_light"
+            android:textAlignment="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:textSize="24dp"
+            android:textAllCaps="true" />
 
         <TextView
             android:layout_width="match_parent"
@@ -20,59 +43,211 @@
             android:text="00 : 00 : 00"
             android:id="@+id/tv_time"
             android:layout_gravity="center_horizontal"
-            android:background="@color/common_google_signin_btn_text_dark_disabled"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="70dp"
             android:textAlignment="center"
-            android:textColor="@android:color/background_light"
-            android:layout_marginTop="16dp" />
-
-        <TextView
-            android:text="Skill Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textColor="@android:color/background_light"
-            android:textAlignment="center"
-            android:textSize="18dp"
-            android:paddingTop="16dp"
-            android:textAllCaps="false" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
-        android:weightSum="1">
-
-        <Button
-            android:layout_width="138dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/btn_start"
-            android:backgroundTint="?android:attr/textColorTertiary"
-            android:layout_weight="1"
-            android:text="start"
             android:textColor="@android:color/background_light" />
 
-        <Button
-            android:layout_height="wrap_content"
-            android:text="Stop"
-            android:id="@+id/btn_stop"
-            android:layout_width="190dp"
-            android:backgroundTint="?android:attr/textColorTertiary"
-            android:textColor="@android:color/background_light"
-            android:layout_gravity="top|bottom"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_start"
+                android:backgroundTint="?android:attr/textColorTertiary"
+                android:text="start"
+                android:textColor="@android:color/background_light"
+                android:layout_weight=".5" />
+
+            <Button
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:id="@+id/btn_stop"
+                android:layout_width="wrap_content"
+                android:backgroundTint="?android:attr/textColorTertiary"
+                android:textColor="@android:color/background_light"
+                android:layout_weight=".5" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8">
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <TextView
+            android:text="Weekly Goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Weekly_goal_title"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textAlignment="viewStart"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/background_light"
+            android:paddingLeft="16dp" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekly_Progressbar"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <TextView
+            android:text="0 Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekly_hours"
+            android:padding="16dp"
+            android:textAlignment="viewStart"
+            android:gravity="left"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="0 Minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekly_minutes"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="0 Seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/weekly_seconds"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <TextView
+            android:text="Current Milestone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cur_m_title"
+            android:layout_weight="1"
+            android:textAllCaps="true"
+            android:textAlignment="viewStart"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textColor="@android:color/background_light"
+            android:paddingLeft="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cur_m_progressbar"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse">
+
+        <TextView
+            android:text="0 Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tot_hours_forCM"
+            android:padding="16dp"
+            android:textAlignment="viewStart"
+            android:gravity="left"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="0 Minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tot_minutes_forCM"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:text="0 Seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tot_seconds_forCM"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:textAlignment="viewEnd" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="ExtraText"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="?android:attr/textColorTertiaryInverse"
+        android:elevation="4dp">>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Rank_Skillhub"
+            android:padding="10dp"
+            android:text="Rank II - 11 Hours"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/donut_Skillhub"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            custom:donut_progress="0" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

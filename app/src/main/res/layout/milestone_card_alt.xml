@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card_view2"
+        app:cardBackgroundColor="?android:attr/textColorTertiaryInverse"
+        android:layout_margin="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_milestone"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:text="Milestone Level"
+                    android:textSize="24dp"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    android:text="0 / 35 Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/completed_hours_text"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:textAlignment="viewEnd"
+                    android:paddingRight="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/progressBar"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank1"
+                    android:padding="10dp"
+                    android:text="Rank I - 5 Hours"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="ExtraText">>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank2"
+                    android:padding="10dp"
+                    android:text="Rank II - 11 Hours"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress2"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank3"
+                    android:padding="10dp"
+                    android:text="Rank III - 18 Hours"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress3"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank4"
+                    android:padding="10dp"
+                    android:text="Rank IV - 26 Hours"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress4"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"><![CDATA[>
+
+                ]]>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank5"
+                    android:padding="10dp"
+                    android:text="Rank V - 35 Hours"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress5"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank6"
+                    android:padding="10dp"
+                    android:text="Rank VI"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress6"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank7"
+                    android:padding="10dp"
+                    android:text="Rank VII"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress7"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank8"
+                    android:padding="10dp"
+                    android:text="Rank VIII"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress8"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank9"
+                    android:padding="10dp"
+                    android:text="Rank IX"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress9"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rank10"
+                    android:padding="10dp"
+                    android:text="Rank X"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical" />
+
+                <com.github.lzyzsd.circleprogress.DonutProgress
+                    android:id="@+id/donut_progress10"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    custom:donut_progress="0" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

@@ -84,8 +84,12 @@ public class Create_Skills extends Activity {
 
     public void saveButtonClicked(View view) {
         // dbHandler.add needs an object parameter.
+        int hours_as_seconds;
         if (hours.getText().toString().equals(""))
-            hours.setText("0");
+            hours_as_seconds = 0;
+        else{
+            hours_as_seconds = Integer.parseInt(hours.getText().toString()) * 3600;
+        }
 
         if (weeklygoal.getText().toString().equals(""))
             weeklygoal.setText("10");
@@ -111,7 +115,7 @@ public class Create_Skills extends Activity {
                 break;
         }
 
-        Skill skill = new Skill(name.getText().toString(), Integer.parseInt(hours.getText().toString()), MasteryLevel_Hours, Integer.parseInt(weeklygoal.getText().toString()));
+        Skill skill = new Skill(name.getText().toString(), hours_as_seconds, MasteryLevel_Hours, Integer.parseInt(weeklygoal.getText().toString()));
         dbHandler.addSkill(skill);
         printDatabase();
     }
