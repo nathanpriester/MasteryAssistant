@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         public void onClick(View w){
             Preferences.setCurrentSkill(context, skillName.getText().toString());
+            Toast.makeText(context, skillName.getText().toString() + " Selected", Toast.LENGTH_SHORT).show();
         }
     }
 

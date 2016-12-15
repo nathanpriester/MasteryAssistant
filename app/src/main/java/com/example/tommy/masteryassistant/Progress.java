@@ -15,3 +15,4 @@ public class Progress extends Activity {
         setContentView(R.layout.progress);
     }
 }
+

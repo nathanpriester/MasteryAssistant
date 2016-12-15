@@ -5,23 +5,6 @@ import java.util.Map;
 
 /**
  * Created by nathan on 11/11/16.
- *
- * This is a helper class to give level name/times, and rank names/times.
- *
- * Usage is simple, give any of the methods a time in seconds, and it will return the
- * corresponding information.
- *
- * ------------------------------------  Available methods are:  ---------------------------------
- *
- * String getLevel(int time)
- * int getLevelHours(int time)
- * int getLevelProgress(int time) <-- returns 0 - 100 indicating percent completed till next level
- *
- * String getRank(int time)
- * int getRankHours(int time)
- * int getRankProgress(int time) <-- returns 0 - 100 indicating percent completed till next rank
- *
- *
  */
 
 public class Milestone_Helper {
@@ -34,7 +17,6 @@ public class Milestone_Helper {
     String[] Beginner_ranks = {"I", "II", "III", "IV", "V"};
     String[] General_ranks = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
 
-    //These times are all in hours
     int[] Beginner_ranks_times = {5,11,18,26,35};
     int[] Novice_ranks_times = {45,56,68,81,95,110,126,143,161,180};
     int[] Rookie_ranks_times = {200,321,243,266,290,315,341,368,396,425};
@@ -62,9 +44,18 @@ public class Milestone_Helper {
         return levels[14];
     }
 
+    public String getCompletedLevel(int time){
+        for(int i = 0; i < 15; i++){
+            if(time < (level_hours[i] * 3600)){
+                return levels[i - 1];
+            }
+        }
+        return levels[14];
+    }
+
     public int getLevelHours(int time){
         String level = getLevel(time);
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 15; i++){
             if(level.equals(levels[i])){
                 return level_hours[i];
             }
@@ -181,7 +172,7 @@ public class Milestone_Helper {
     public int getLevelProgress(int time){
         String level = getLevel(time);
         int max_time = getLevelHours(time) * 3600;
-        double output = ((double)time / max_time) * 100;
+        double output = ((double)time / (double)max_time) * 100;
         return (int) output;
 
     }

@@ -12,15 +12,6 @@
     tools:context="com.example.tommy.masteryassistant.MainActivity"
     android:background="@color/colorPrimary">
 
-
-
-    <LinearLayout android:id="@+id/LinearLayout01"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@drawable/icon">
-    </LinearLayout>
-
     <TextView
         android:text="Quote of the Day !"
         android:layout_width="300dp"
@@ -80,14 +71,14 @@
             android:paddingBottom="16dp" />
 
         <ImageView
-        android:src="@drawable/quote3"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:id="@+id/imageView3"
-        android:scaleType="centerCrop"
-        android:layout_width="300dp"
+            android:src="@drawable/quote3"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:id="@+id/imageView3"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
             android:paddingTop="52dp" />
 
         <ImageView
@@ -220,6 +211,23 @@
         android:scaleType="centerCrop"
         android:adjustViewBounds="false"
         android:cropToPadding="false" />
+
+    <TextView
+        android:text="Create a Skill!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentSkillMainMenu"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/button_createskill"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold"
+        android:textAllCaps="false"
+        android:textSize="18dp" />
 
 
 </RelativeLayout>

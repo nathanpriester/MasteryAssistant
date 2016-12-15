@@ -23,8 +23,13 @@
         <activity android:name=".Skill_Hub"></activity>
         <activity android:name=".Milestones"></activity>
         <activity android:name=".View_Skills"></activity>
-        <activity android:name=".Progress"></activity>
-        <activity android:name=".Settings"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+        <activity android:name=".Calendar"></activity>
+        <activity android:name=".Settings"></activity>
+
+        <activity android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme"
+            ></activity>
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"

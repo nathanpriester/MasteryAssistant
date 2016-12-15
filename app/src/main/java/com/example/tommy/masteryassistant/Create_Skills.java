@@ -1,9 +1,13 @@
 package com.example.tommy.masteryassistant;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -83,16 +87,26 @@ public class Create_Skills extends Activity {
     }
 
     public void saveButtonClicked(View view) {
-        // dbHandler.add needs an object parameter.
+        String skillName = name.getText().toString();
+        String weeklyText = weeklygoal.getText().toString();
+        int weeklyGoal;
+        if (weeklyText.equals(""))
+            weeklyGoal = 10;
+        else
+            weeklyGoal = Integer.parseInt(weeklyText);
+
+        //if skillname or weekly goal invalid, return
+        if (!skillTextValidation(skillName, this) ||
+                !weeklyGoalValidation(weeklyGoal, this)){
+            return;
+        }
+
         int hours_as_seconds;
         if (hours.getText().toString().equals(""))
             hours_as_seconds = 0;
         else{
             hours_as_seconds = Integer.parseInt(hours.getText().toString()) * 3600;
         }
-
-        if (weeklygoal.getText().toString().equals(""))
-            weeklygoal.setText("10");
 
         int MasteryLevelUnique_ID = (int) spinner.getSelectedItemId();
         int MasteryLevel_Hours;
@@ -115,9 +129,45 @@ public class Create_Skills extends Activity {
                 break;
         }
 
-        Skill skill = new Skill(name.getText().toString(), hours_as_seconds, MasteryLevel_Hours, Integer.parseInt(weeklygoal.getText().toString()));
+        Skill skill = new Skill(skillName, hours_as_seconds, MasteryLevel_Hours, weeklyGoal);
         dbHandler.addSkill(skill);
         printDatabase();
+        Preferences.setCurrentSkill(this, skillName);
+    }
+
+    public boolean skillTextValidation(String name, Context context){
+        DBHandler dbHandler = new DBHandler(context);
+        SQLiteDatabase sqLiteDatabase = dbHandler.getReadableDatabase();
+        Cursor cursor = dbHandler.getInformation(sqLiteDatabase);
+        cursor.moveToFirst();
+        boolean skillInDatabase = false;
+
+        //get cursor to point to Current Skill
+        while (!cursor.isAfterLast()){
+            if (cursor.getString(0).equals(name)){
+                skillInDatabase = true;
+                break;
+            }
+            cursor.moveToNext();
+        }
+
+        if (name.equals("")) {
+            Toast.makeText(getBaseContext(), "Skill Name is Empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else if (skillInDatabase) {
+            Toast.makeText(getBaseContext(), "Duplicate Skill Not Valid", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean weeklyGoalValidation(int weeklyGoal, Context context){
+        if (weeklyGoal > 133){
+            Toast.makeText(getBaseContext(), "Max Weekly Goal is 133 Hours", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
     //Delete items
@@ -125,6 +175,9 @@ public class Create_Skills extends Activity {
         // dbHandler delete needs string to find in the db
         String inputText = name.getText().toString();
         dbHandler.deleteSkill(inputText);
+        if(inputText.equals(Preferences.getCurrentSkill(this))){
+            Preferences.setCurrentSkill(this, "No Current Skill Set");
+        }
         printDatabase();
     }
 

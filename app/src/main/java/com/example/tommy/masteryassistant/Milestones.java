@@ -45,10 +45,17 @@ public class Milestones extends Activity {
         mRecyclerView.setHasFixedSize(true);
 
         //Get skill data bassed off preference NEEDS TO BE IMPLEMENTED *current retrieval temporary
+        String currentSkill = Preferences.getCurrentSkill(this);
         DBHandler dbHandler = new DBHandler(this);
         SQLiteDatabase sqLiteDatabase = dbHandler.getReadableDatabase();
         Cursor cursor = dbHandler.getInformation(sqLiteDatabase);
         cursor.moveToFirst();
+
+        //get cursor to point to Current Skill
+        while (!cursor.getString(0).equals(currentSkill)){
+            cursor.moveToNext();
+        }
+
         int seconds_as_int = cursor.getInt(1);
         dbHandler.close();
 

@@ -30,6 +30,7 @@ public class Skill_Hub extends Activity {
     private Context mContext;
     private Chronometer mChronometer;
     private Thread mThreadChrono;
+    private Milestone_Helper milestone_helper = new Milestone_Helper();
 
     TextView SKILL_NAME;
     TextView WEEKLY_GOAL;
@@ -269,7 +270,8 @@ public class Skill_Hub extends Activity {
          */
     }
 
-    public void updateTimerText(final String time, final String totalHours, final String totalMinutes, final String totalSeconds) {
+    public void updateTimerText(final String time, final String totalHours, final String totalMinutes, final String totalSeconds,
+                                final int totalTime) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -277,7 +279,26 @@ public class Skill_Hub extends Activity {
                 seconds_to_level.setText(totalSeconds);
                 minutes_to_level.setText(totalMinutes);
                 hours_to_level.setText(totalHours);
+                current_M_Progress_Bar.setProgress(milestone_helper.getLevelProgress(totalTime));
+                donutProgress_skillhub.setProgress(milestone_helper.getRankProgress(totalTime));
+            }
+        });
+    }
 
+    public void updateLevelTitle(final String level_title){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                CURRENT_LEVEL.setText(level_title + " - " + "HOURS");
+            }
+        });
+    }
+
+    public void updateRankTitle(final String rank_title){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                milestone_rank.setText("Rank " + rank_title + " - Hours");
             }
         });
     }
@@ -292,15 +313,17 @@ public class Skill_Hub extends Activity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed()
+    {
+        // code here to show dialog
         if(mChronometer != null) {
             mChronometer.stop();
             mThreadChrono.interrupt();
             mThreadChrono = null;
 
             mChronometer = null;
+            Toast.makeText(getBaseContext(), "Timer Stopped", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(getBaseContext(), "Timer Stopped", Toast.LENGTH_SHORT).show();
-        super.onBackPressed();
+        super.onBackPressed();  // optional depending on your need
     }
 }

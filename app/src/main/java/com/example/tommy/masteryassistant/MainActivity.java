@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.google.android.gms.appindexing.Action;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private GoogleApiClient client;
     private ViewFlipper flip;
     private float initialX;
+    private TextView CurrentSkill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         // Setting IN and OUT animation for view flipper
         flip.setInAnimation(this, R.anim.right_enter);
         flip.setOutAnimation(this, R.anim.left_out);
-
-
+        CurrentSkill = (TextView)findViewById(R.id.currentSkillMainMenu);
+        CurrentSkill.setText(Preferences.getCurrentSkill(this));
     }
 
     //SHARE BUTTON STUFF
@@ -67,22 +70,22 @@ public class MainActivity extends AppCompatActivity {
         return true;
 
     }
-/*
-    // Determines if Action bar item was selected. If true then do corresponding action.
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    /*
+        // Determines if Action bar item was selected. If true then do corresponding action.
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
 
-        //handle presses on the action bar items
-        switch (item.getItemId()) {
+            //handle presses on the action bar items
+            switch (item.getItemId()) {
 
-            case R.id.activity_share:
-                startActivity(new Intent(this, Share.class));
-                return true;
+                case R.id.activity_share:
+                    startActivity(new Intent(this, Share.class));
+                    return true;
 
+            }
+            return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
-    }
-*/
+    */
     // Implementing touch event for view flipper
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -134,8 +137,12 @@ public class MainActivity extends AppCompatActivity {
     public void onButton_Skill_Hub(View v) {
 
         if (v.getId() == R.id.button_skillhub) {
-            Intent hub = new Intent(MainActivity.this, Skill_Hub.class);
-            startActivity(hub);
+            if (Preferences.getCurrentSkill(this) == "No Current Skill Set")
+                Toast.makeText(getBaseContext(), "Create a Skill!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent hub = new Intent(MainActivity.this, Skill_Hub.class);
+                startActivity(hub);
+            }
         }
 
     }
@@ -143,8 +150,12 @@ public class MainActivity extends AppCompatActivity {
     public void onButton_Milestones(View v) {
 
         if (v.getId() == R.id.button_milestones) {
-            Intent milestone1 = new Intent(MainActivity.this, Milestones.class);
-            startActivity(milestone1);
+            if (Preferences.getCurrentSkill(this) == "No Current Skill Set")
+                Toast.makeText(getBaseContext(), "Create a Skill!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent milestone1 = new Intent(MainActivity.this, Milestones.class);
+                startActivity(milestone1);
+            }
         }
 
     }
@@ -152,8 +163,12 @@ public class MainActivity extends AppCompatActivity {
     public void onButton_View_Skills(View v) {
 
         if (v.getId() == R.id.button_viewskills) {
-            Intent viewskills = new Intent(MainActivity.this, View_Skills.class);
-            startActivity(viewskills);
+            if (Preferences.getCurrentSkill(this) == "No Current Skill Set")
+                Toast.makeText(getBaseContext(), "Create a Skill!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent viewskills = new Intent(MainActivity.this, View_Skills.class);
+                startActivity(viewskills);
+            }
         }
 
     }
@@ -161,8 +176,12 @@ public class MainActivity extends AppCompatActivity {
     public void onButton_Progress(View v) {
 
         if (v.getId() == R.id.button_progress) {
-            Intent prog = new Intent(MainActivity.this, Progress.class);
-            startActivity(prog);
+            if (Preferences.getCurrentSkill(this) == "No Current Skill Set")
+                Toast.makeText(getBaseContext(), "Create a Skill!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent newactivity = new Intent(MainActivity.this, Calendar.class);
+                startActivity(newactivity);
+            }
         }
 
     }
@@ -170,8 +189,12 @@ public class MainActivity extends AppCompatActivity {
     public void onButton_Settings(View v) {
 
         if (v.getId() == R.id.button_settings) {
-            Intent settings1 = new Intent(MainActivity.this, Settings.class);
-            startActivity(settings1);
+            if (Preferences.getCurrentSkill(this) == "No Current Skill Set")
+                Toast.makeText(getBaseContext(), "Create a Skill!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent settings1 = new Intent(MainActivity.this, Settings.class);
+                startActivity(settings1);
+            }
         }
 
     }

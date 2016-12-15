@@ -1,9 +1,11 @@
 package com.example.tommy.masteryassistant;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.webkit.ServiceWorkerClient;
+import android.widget.ProgressBar;
 
 /**
  * Created by Danie_000 on 10/5/2016.
@@ -20,6 +22,7 @@ public class Chronometer implements Runnable {
     private DBHandler dbHandler;
     private SQLiteDatabase sqLiteDatabase;
     private Cursor cursor;
+
 
 
     public Chronometer(Context mContext) {
@@ -57,9 +60,13 @@ public class Chronometer implements Runnable {
     @Override
     public void run() {
         DBHandler dbHandler = new DBHandler(mContext);
+        Milestone_Helper milestone_helper = new Milestone_Helper();
         long elapsed_time, started_time = System.currentTimeMillis();
         //seconds_as_int = dbHandler.getSkillTime(currentSkill);
         int starting_db_total_seconds = dbHandler.getSkillTime(currentSkill);
+        String currentLevel = milestone_helper.getLevel(starting_db_total_seconds);
+        String currentRank = milestone_helper.getRank(starting_db_total_seconds);
+        int estimated_db_total_seconds = 0;
         while(mIsRunning){
 
             elapsed_time = System.currentTimeMillis() - started_time;
@@ -74,7 +81,7 @@ public class Chronometer implements Runnable {
             int minutes = (int) ((since / MILIS_TO_MINUTES) % 60);
             int hours = (int) ((since / MILIS_TO_HOURS) % 24);
 
-            int estimated_db_total_seconds = starting_db_total_seconds + since_seconds + 10;
+            estimated_db_total_seconds += 300;
 
             int db_seconds_display = (estimated_db_total_seconds % 3600) % 60;
             int db_minutes_display = (estimated_db_total_seconds % 3600) / 60;
@@ -86,8 +93,24 @@ public class Chronometer implements Runnable {
 
 
             ((Skill_Hub)mContext).updateTimerText(String.format(
-                    "%02d : %02d : %02d", hours, minutes, seconds), tot_hours, tot_leftOver_minutes, tot_leftOver_seconds);
+                    "%02d : %02d : %02d", hours, minutes, seconds), tot_hours, tot_leftOver_minutes, tot_leftOver_seconds,
+                    estimated_db_total_seconds);
 
+            if (!currentLevel.equals(milestone_helper.getLevel(estimated_db_total_seconds))){
+                currentLevel = milestone_helper.getLevel(estimated_db_total_seconds);
+                currentRank = milestone_helper.getRank(estimated_db_total_seconds);
+                ((Skill_Hub)mContext).updateLevelTitle(currentLevel);
+                ((Skill_Hub)mContext).updateRankTitle(currentRank);
+                (mContext).startActivity(new Intent(mContext, Pop.class));
+            }
+            else if (!currentRank.equals(milestone_helper.getRank(estimated_db_total_seconds))){
+                currentRank = milestone_helper.getRank(estimated_db_total_seconds);
+                ((Skill_Hub)mContext).updateRankTitle(currentRank);
+                (mContext).startActivity(new Intent(mContext, Pop.class));
+            }
+            else if (estimated_db_total_seconds == 36000000){
+                (mContext).startActivity(new Intent(mContext, Pop.class));
+            }
 
             //Sleep the thread for a short amount, to prevent high CPU usage!
             try {
